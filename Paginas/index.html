@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mxchines Studio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -14,20 +15,23 @@
             <ul>
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#produtos">Produtos</a></li>
-                <li><a href="#contato">Contato</a></li>
                 <li><a href="carrinho.html" class="carrinho-icon"><i class="fas fa-shopping-cart"></i></a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="inicio">
-            <h1>Bem-vindo à Mxchines Studio</h1>
-            <p>Streetwear autêntico para você se expressar</p>
-            <div id="timer">
-                <h2>Próximo Drop em:</h2>
-                <div id="countdown"></div>
+        <section id="inicio" class="hero">
+            <img src="../mxchines.jpg" alt="Mxchines Studio Logo" class="hero-logo">
+            <div class="hero-content">
+                <h1>Bem-vindo à Mxchines Studio</h1>
+                <p>Streetwear autêntico para você se expressar</p>
             </div>
+        </section>
+
+        <section id="proximo-drop" class="next-drop">
+            <h2>Próximo Drop em:</h2>
+            <div id="countdown"></div>
         </section>
 
         <section id="produtos">
@@ -53,22 +57,25 @@
                 </div>
             </div>
         </section>
-
-        <section id="contato">
-            <h2>Entre em Contato</h2>
-            <div class="contato-info">
-                <a href="https://wa.me/5511999999999" target="_blank">WhatsApp</a>
-                <a href="https://instagram.com/mxchinesstudio" target="_blank">Instagram</a>
-                <a href="mailto:contato@mxchinesstudio.com">E-mail</a>
-            </div>
-        </section>
     </main>
 
     <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Sobre Nós</a>
+                <a href="#">Termos de Serviço</a>
+                <a href="#">Política de Privacidade</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://instagram.com/mxchinesstudio" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:contato@mxchinesstudio.com"><i class="far fa-envelope"></i></a>
+                <a href="https://wa.me/5511999999999" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
         <p>&copy; 2023 Mxchines Studio. Todos os direitos reservados.</p>
     </footer>
 
+    <script src="main.js"></script>
 </body>
 </html>
-<script src="main.js"></script>
 

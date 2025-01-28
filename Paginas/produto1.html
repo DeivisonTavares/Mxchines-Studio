@@ -4,59 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Camisa Modelo 1 - Mxchines Studio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        .produto-detalhes {
-            display: flex;
-            gap: 2rem;
-            align-items: flex-start;
-            margin-top: 2rem;
-        }
-        .produto-imagem {
-            flex: 1;
-        }
-        .produto-info {
-            flex: 1;
-        }
-        .tamanhos {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        .tamanho {
-            padding: 0.5rem 1rem;
-            border: 1px solid #000;
-            cursor: pointer;
-        }
-        .tamanho.esgotado {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-        .calcular-frete {
-            margin-top: 2rem;
-        }
-        .quantidade {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        .quantidade button {
-            padding: 0.5rem 1rem;
-            font-size: 1.2rem;
-            cursor: pointer;
-        }
-        .frete-info {
-            margin-top: 1rem;
-            font-weight: bold;
-        }
-        .botoes-acao {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -94,7 +44,7 @@
                 </div>
                 <div class="frete-info" id="freteInfo"></div>
                 <div class="botoes-acao">
-                    <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+                    <button onclick="adicionarAoCarrinho()" class="btn-comprar">Adicionar ao Carrinho</button>
                     <a href="carrinho.html" class="btn-comprar">Ver Carrinho</a>
                 </div>
             </div>
@@ -102,6 +52,18 @@
     </main>
 
     <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Sobre Nós</a>
+                <a href="#">Termos de Serviço</a>
+                <a href="#">Política de Privacidade</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://instagram.com/mxchinesstudio" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:contato@mxchinesstudio.com"><i class="far fa-envelope"></i></a>
+                <a href="https://wa.me/5511999999999" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
         <p>&copy; 2023 Mxchines Studio. Todos os direitos reservados.</p>
     </footer>
 
