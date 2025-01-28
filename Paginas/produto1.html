@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camisa Modelo 1 - Mxchines Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .produto-detalhes {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            margin-top: 2rem;
+        }
+        .produto-imagem {
+            flex: 1;
+        }
+        .produto-info {
+            flex: 1;
+        }
+        .tamanhos {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .tamanho {
+            padding: 0.5rem 1rem;
+            border: 1px solid #000;
+            cursor: pointer;
+        }
+        .tamanho.esgotado {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .calcular-frete {
+            margin-top: 2rem;
+        }
+        .quantidade {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .quantidade button {
+            padding: 0.5rem 1rem;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+        .frete-info {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+        .botoes-acao {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Mxchines Studio</div>
+            <ul>
+                <li><a href="index.html">Voltar para a Loja</a></li>
+                <li><a href="carrinho.html" class="carrinho-icon"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="produto-detalhes">
+            <div class="produto-imagem">
+                <img src="camisa1.jpg" alt="Camisa Modelo 1">
+            </div>
+            <div class="produto-info">
+                <h1>Camisa Modelo 1</h1>
+                <p>R$ 99,90</p>
+                <div class="tamanhos">
+                    <div class="tamanho">P</div>
+                    <div class="tamanho">M</div>
+                    <div class="tamanho esgotado">G</div>
+                </div>
+                <div class="quantidade">
+                    <button id="diminuir">-</button>
+                    <span id="quantidade">1</span>
+                    <button id="aumentar">+</button>
+                </div>
+                <div class="calcular-frete">
+                    <h3>Calcular Frete</h3>
+                    <input type="text" id="cep" placeholder="Digite seu CEP">
+                    <button onclick="calcularFrete()">Calcular</button>
+                </div>
+                <div class="frete-info" id="freteInfo"></div>
+                <div class="botoes-acao">
+                    <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+                    <a href="carrinho.html" class="btn-comprar">Ver Carrinho</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Mxchines Studio. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        let quantidade = 1;
+        const quantidadeElement = document.getElementById('quantidade');
+
+        document.getElementById('diminuir').addEventListener('click', () => {
+            if (quantidade > 1) {
+                quantidade--;
+                quantidadeElement.textContent = quantidade;
+            }
+        });
+
+        document.getElementById('aumentar').addEventListener('click', () => {
+            quantidade++;
+            quantidadeElement.textContent = quantidade;
+        });
+
+        function calcularFrete() {
+            const cep = document.getElementById('cep').value;
+            // Simulação de cálculo de frete
+            const frete = Math.floor(Math.random() * 20) + 10;
+            document.getElementById('freteInfo').textContent = `Frete para ${cep}: R$ ${frete},00`;
+        }
+
+        function adicionarAoCarrinho() {
+            const tamanhoSelecionado = document.querySelector('.tamanho:not(.esgotado)').textContent;
+            const produto = {
+                nome: 'Camisa Modelo 1',
+                preco: 99.90,
+                tamanho: tamanhoSelecionado,
+                quantidade: quantidade
+            };
+            let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            carrinho.push(produto);
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+            alert('Produto adicionado ao carrinho!');
+        }
+    </script>
+</body>
+</html>
+

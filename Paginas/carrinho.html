@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - Mxchines Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .carrinho-lista {
+            margin-top: 2rem;
+        }
+        .carrinho-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+        }
+        .carrinho-item img {
+            width: 100px;
+            height: auto;
+        }
+        .total {
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .opcoes-pagamento {
+            margin-top: 2rem;
+        }
+        .opcoes-pagamento button {
+            margin-right: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Mxchines Studio</div>
+            <ul>
+                <li><a href="index.html">Voltar para a Loja</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Seu Carrinho</h1>
+        <div id="carrinho-lista" class="carrinho-lista"></div>
+        <div id="total" class="total"></div>
+        <div class="opcoes-pagamento">
+            <h3>Opções de Pagamento</h3>
+            <button onclick="selecionarPagamento('credito')">Cartão de Crédito</button>
+            <button onclick="selecionarPagamento('debito')">Cartão de Débito</button>
+            <button onclick="selecionarPagamento('pix')">PIX</button>
+        </div>
+        <a href="index.html" class="btn-comprar">Continuar Comprando</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Mxchines Studio. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function carregarCarrinho() {
+            const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            const carrinhoLista = document.getElementById('carrinho-lista');
+            let total = 0;
+
+            carrinhoLista.innerHTML = '';
+            carrinho.forEach((item, index) => {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('carrinho-item');
+                itemElement.innerHTML = `
+                    <img src="camisa1.jpg" alt="${item.nome}">
+                    <div>
+                        <h3>${item.nome}</h3>
+                        <p>Tamanho: ${item.tamanho}</p>
+                        <p>Quantidade: ${item.quantidade}</p>
+                        <p>Preço: R$ ${(item.preco * item.quantidade).toFixed(2)}</p>
+                    </div>
+                    <button onclick="removerItem(${index})">Remover</button>
+                `;
+                carrinhoLista.appendChild(itemElement);
+                total += item.preco * item.quantidade;
+            });
+
+            document.getElementById('total').textContent = `Total: R$ ${total.toFixed(2)}`;
+        }
+
+        function removerItem(index) {
+            let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            carrinho.splice(index, 1);
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+            carregarCarrinho();
+        }
+
+        function selecionarPagamento(metodo) {
+            alert(`Método de pagamento selecionado: ${metodo}`);
+            // Aqui você implementaria a lógica para processar o pagamento
+        }
+
+        window.onload = carregarCarrinho;
+    </script>
+</body>
+</html>
+
