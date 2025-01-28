@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   
     // Timer para o próximo drop
-    const proximoDrop = new Date("2023-07-01T00:00:00").getTime()
+    const proximoDrop = new Date("2025-02-27T00:00:00").getTime()
   
     const atualizarContagem = setInterval(() => {
       const agora = new Date().getTime()
