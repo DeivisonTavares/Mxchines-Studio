@@ -11,7 +11,7 @@
 <body>
     <header>
         <nav>
-            <div class="logo">Mxchines Studio</div>
+            <div class="logo" onclick="IrHomepage()">Mxchines Studio</div>
             <ul>
                 <li><a href="index.html">Voltar para a Loja</a></li>
                 <li><a href="carrinho.html" class="carrinho-icon"><i class="fas fa-shopping-cart"></i></a></li>
@@ -28,9 +28,9 @@
                 <h1>Camisa Modelo 1</h1>
                 <p>R$ 99,90</p>
                 <div class="tamanhos">
-                    <div class="tamanho">P</div>
-                    <div class="tamanho">M</div>
-                    <div class="tamanho esgotado">G</div>
+                    <div class="tamanho" id="tamanho_p" onclick="selecionarTamanhoDaCamisa('P')">P</div>
+                    <div class="tamanho" id="tamanho_m" onclick="selecionarTamanhoDaCamisa('M')">M</div>
+                    <div class="tamanho esgotado" id="tamanho_g" onclick="selecionarTamanhoDaCamisa('G')">G</div>                    
                 </div>
                 <div class="quantidade">
                     <button id="diminuir">-</button>
@@ -40,7 +40,7 @@
                 <div class="calcular-frete">
                     <h3>Calcular Frete</h3>
                     <input type="text" id="cep" placeholder="Digite seu CEP">
-                    <button onclick="calcularFrete()">Calcular</button>
+                    <button class="btn-qualquer" onclick="calcularFrete()">Calcular</button>
                 </div>
                 <div class="frete-info" id="freteInfo"></div>
                 <div class="botoes-acao">
@@ -59,7 +59,7 @@
                 <a href="#">Política de Privacidade</a>
             </div>
             <div class="social-icons">
-                <a href="https://instagram.com/mxchinesstudio" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.instagram.com/mxchinestudio?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="mailto:contato@mxchinesstudio.com"><i class="far fa-envelope"></i></a>
                 <a href="https://wa.me/5511999999999" target="_blank"><i class="fab fa-whatsapp"></i></a>
             </div>
@@ -69,6 +69,7 @@
 
     <script>
         let quantidade = 1;
+        let tamanhoSelecionado = ""; // Variável global para armazenar o tamanho selecionado
         const quantidadeElement = document.getElementById('quantidade');
 
         document.getElementById('diminuir').addEventListener('click', () => {
@@ -83,27 +84,40 @@
             quantidadeElement.textContent = quantidade;
         });
 
+        //ainda a implementar
         function calcularFrete() {
             const cep = document.getElementById('cep').value;
-            // Simulação de cálculo de frete
             const frete = Math.floor(Math.random() * 20) + 10;
             document.getElementById('freteInfo').textContent = `Frete para ${cep}: R$ ${frete},00`;
         }
 
+        // Função para selecionar o tamanho da camisa
+        function selecionarTamanhoDaCamisa(tamanho) {
+            tamanhoSelecionado = tamanho; // Armazena o tamanho selecionado
+            document.querySelectorAll(".tamanho").forEach(t => t.classList.remove("selecionado"));
+            document.getElementById(`tamanho_${tamanho.toLowerCase()}`).classList.add("selecionado");
+            alert("Tamanho " + tamanho + " selecionado!");
+        }
+
+        // Função para adicionar ao carrinho
         function adicionarAoCarrinho() {
-            const tamanhoSelecionado = document.querySelector('.tamanho:not(.esgotado)').textContent;
+            if (!tamanhoSelecionado) {
+                alert("Por favor, selecione um tamanho antes de adicionar ao carrinho!");
+                return;
+            }
+
             const produto = {
-                nome: 'Camisa Modelo 1',
+                nome: "Camisa Modelo 1",
                 preco: 99.90,
                 tamanho: tamanhoSelecionado,
                 quantidade: quantidade
             };
-            let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+            let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
             carrinho.push(produto);
-            localStorage.setItem('carrinho', JSON.stringify(carrinho));
-            alert('Produto adicionado ao carrinho!');
+            localStorage.setItem("carrinho", JSON.stringify(carrinho));
+            alert("Camisa " + tamanhoSelecionado + " adicionada ao carrinho!");
         }
     </script>
 </body>
 </html>
-

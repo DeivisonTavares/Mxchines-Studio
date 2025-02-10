@@ -31,6 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1000)
   })
   
+  //navegacao entre paginas
+  function IrHomepage() {
+      window.location.href = "index.html";
+  }
+  
+  //carrinho
   function carregarCarrinho() {
     const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
     const carrinhoLista = document.getElementById('carrinho-lista');
@@ -57,16 +63,18 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('total').textContent = `Total: R$ ${total.toFixed(2)}`;
 }
 
-function removerItem(index) {
+  //remover item do carrinho
+  function removerItem(index) {
     let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
     carrinho.splice(index, 1);
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
     carregarCarrinho();
-}
+  }
 
-function selecionarPagamento(metodo) {
-    alert(`Método de pagamento selecionado: ${metodo}`);
-    // Aqui você implementaria a lógica para processar o pagamento
-}
+  //selecionar metodo de pagamento
+  function selecionarPagamento(metodo) {
+      alert(`Método de pagamento selecionado: ${metodo}`);
+      // Aqui você implementaria a lógica para processar o pagamento
+  }
 
-window.onload = carregarCarrinho;
+  window.onload = carregarCarrinho;

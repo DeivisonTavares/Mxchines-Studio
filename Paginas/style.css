@@ -178,6 +178,21 @@
   .btn-comprar:hover {
     background-color: var(--secondary);
   }
+
+  .btn-qualquer {
+    display: inline-block;
+    background-color: var(--primary);
+    color: var(--on-primary);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-qualquer:hover {
+    background-color: var(--secondary);
+  }
   
   .esgotado {
     opacity: 0.7;
