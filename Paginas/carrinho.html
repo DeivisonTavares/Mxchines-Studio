@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" style="height: 100%;margin: 0;display: flex;flex-direction: column;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
+<body style="height: 100%;margin: 0;display: flex;flex-direction: column;">
     <header>
         <nav>
             <div class="logo">Mxchines Studio</div>
@@ -18,7 +18,7 @@
         </nav>
     </header>
 
-    <main>
+    <main style="flex: 1;">
         <h1>Seu Carrinho</h1>
         <div id="carrinho-lista" class="carrinho-lista"></div>
         <div id="total" class="total"></div>
@@ -46,48 +46,6 @@
         </div>
         <p>&copy; 2023 Mxchines Studio. Todos os direitos reservados.</p>
     </footer>
-
-    <script>
-        function carregarCarrinho() {
-            const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-            const carrinhoLista = document.getElementById('carrinho-lista');
-            let total = 0;
-
-            carrinhoLista.innerHTML = '';
-            carrinho.forEach((item, index) => {
-                const itemElement = document.createElement('div');
-                itemElement.classList.add('carrinho-item');
-                itemElement.innerHTML = `
-                    <img src="camisa1.jpg" alt="${item.nome}">
-                    <div>
-                        <h3>${item.nome}</h3>
-                        <p>Tamanho: ${item.tamanho}</p>
-                        <p>Quantidade: ${item.quantidade}</p>
-                        <p>Preço: R$ ${(item.preco * item.quantidade).toFixed(2)}</p>
-                    </div>
-                    <button onclick="removerItem(${index})">Remover</button>
-                `;
-                carrinhoLista.appendChild(itemElement);
-                total += item.preco * item.quantidade;
-            });
-
-            document.getElementById('total').textContent = `Total: R$ ${total.toFixed(2)}`;
-        }
-
-        function removerItem(index) {
-            let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-            carrinho.splice(index, 1);
-            localStorage.setItem('carrinho', JSON.stringify(carrinho));
-            carregarCarrinho();
-        }
-
-        function selecionarPagamento(metodo) {
-            alert(`Método de pagamento selecionado: ${metodo}`);
-            // Aqui você implementaria a lógica para processar o pagamento
-        }
-
-        window.onload = carregarCarrinho;
-    </script>
 </body>
 </html>
-
+<script src="main.js"></script>
