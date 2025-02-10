@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
+<body style="height: 100%;display: flex;flex-direction: column;">
     <header>
         <nav>
             <div class="logo" onclick="IrHomepage()">Mxchines Studio</div>
@@ -18,11 +18,10 @@
             </ul>
         </nav>
     </header>
-
-    <main>
+    <main style="flex: 1;">
         <section class="produto-detalhes">
             <div class="produto-imagem">
-                <img src="../src/MXCHINES FOTO 6.png" alt="Camisa Modelo 1" style="height: 550px; width: 550px;">
+                <img src="../src/foto_nova1.png" alt="Camisa Modelo 1" style="height: 550px; width: 550px;">
             </div>
             <div class="produto-info">
                 <h1>Camisa Modelo 1</h1>
@@ -30,7 +29,7 @@
                 <div class="tamanhos">
                     <div class="tamanho" id="tamanho_p" onclick="selecionarTamanhoDaCamisa('P')">P</div>
                     <div class="tamanho" id="tamanho_m" onclick="selecionarTamanhoDaCamisa('M')">M</div>
-                    <div class="tamanho esgotado" id="tamanho_g" onclick="selecionarTamanhoDaCamisa('G')">G</div>                    
+                    <div class="tamanho esgotado" id="tamanho_g" onclick="selecionarTamanhoDaCamisa('G')">G</div>
                 </div>
                 <div class="quantidade">
                     <button id="diminuir">-</button>
@@ -51,7 +50,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer style=" margin-top: auto;">
         <div class="footer-content">
             <div class="footer-links">
                 <a href="#">Sobre Nós</a>
@@ -59,65 +58,14 @@
                 <a href="#">Política de Privacidade</a>
             </div>
             <div class="social-icons">
-                <a href="https://www.instagram.com/mxchinestudio?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.instagram.com/mxchinestudio?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                    target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="mailto:contato@mxchinesstudio.com"><i class="far fa-envelope"></i></a>
                 <a href="https://wa.me/5511999999999" target="_blank"><i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
         <p>&copy; 2023 Mxchines Studio. Todos os direitos reservados.</p>
     </footer>
-
-    <script>
-        let quantidade = 1;
-        let tamanhoSelecionado = ""; // Variável global para armazenar o tamanho selecionado
-        const quantidadeElement = document.getElementById('quantidade');
-
-        document.getElementById('diminuir').addEventListener('click', () => {
-            if (quantidade > 1) {
-                quantidade--;
-                quantidadeElement.textContent = quantidade;
-            }
-        });
-
-        document.getElementById('aumentar').addEventListener('click', () => {
-            quantidade++;
-            quantidadeElement.textContent = quantidade;
-        });
-
-        //ainda a implementar
-        function calcularFrete() {
-            const cep = document.getElementById('cep').value;
-            const frete = Math.floor(Math.random() * 20) + 10;
-            document.getElementById('freteInfo').textContent = `Frete para ${cep}: R$ ${frete},00`;
-        }
-
-        // Função para selecionar o tamanho da camisa
-        function selecionarTamanhoDaCamisa(tamanho) {
-            tamanhoSelecionado = tamanho; // Armazena o tamanho selecionado
-            document.querySelectorAll(".tamanho").forEach(t => t.classList.remove("selecionado"));
-            document.getElementById(`tamanho_${tamanho.toLowerCase()}`).classList.add("selecionado");
-            alert("Tamanho " + tamanho + " selecionado!");
-        }
-
-        // Função para adicionar ao carrinho
-        function adicionarAoCarrinho() {
-            if (!tamanhoSelecionado) {
-                alert("Por favor, selecione um tamanho antes de adicionar ao carrinho!");
-                return;
-            }
-
-            const produto = {
-                nome: "Camisa Modelo 1",
-                preco: 99.90,
-                tamanho: tamanhoSelecionado,
-                quantidade: quantidade
-            };
-
-            let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-            carrinho.push(produto);
-            localStorage.setItem("carrinho", JSON.stringify(carrinho));
-            alert("Camisa " + tamanhoSelecionado + " adicionada ao carrinho!");
-        }
-    </script>
 </body>
 </html>
+<script src="main.js"></script>
