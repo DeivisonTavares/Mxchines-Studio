@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mxchines Studio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo" onclick="IrHomepage()">Mxchines Studio</div>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="carrinho.html" class="carrinho-icon"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <img src="../img/logo.png" alt="Mxchines Studio Logo" class="hero-logo">
+            <div class="hero-content">
+                <h1>Bem-vindo à Mxchines Studio</h1>
+                <p>Streetwear autêntico para você se expressar</p>
+            </div>
+        </section>
+
+        <section id="proximo-drop" class="next-drop">
+            <h2>Próximo Drop em:</h2>
+            <div id="countdown"></div>
+        </section>
+
+        <section id="produtos">
+            <h2>Nossas Camisetas</h2>
+            <div class="grid-produtos">
+                <div class="produto">
+                    <img src="../img/MXCHINES FOTO 6.png" alt="Camisa 1">
+                    <h3>Camisa Modelo 1</h3>
+                    <p>R$ 99,90</p>
+                    <a href="produto1OFC.html" class="btn-comprar">Comprar</a>
+                </div>
+                <div class="produto">
+                    <img src="camisa2.jpg" alt="Camisa 2">
+                    <h3>Camisa Modelo 2</h3>
+                    <p>R$ 109,90</p>
+                    <a href="produto2.html" class="btn-comprar">Comprar</a>
+                </div>
+                <div class="produto esgotado">
+                    <img src="camisa3.jpg" alt="Camisa 3">
+                    <h3>Camisa Modelo 3</h3>
+                    <p>R$ 119,90</p>
+                    <span class="esgotado-tag">Esgotado</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Sobre Nós</a>
+                <a href="#">Termos de Serviço</a>
+                <a href="#">Política de Privacidade</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://instagram.com/mxchinesstudio" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:contato@mxchinesstudio.com"><i class="far fa-envelope"></i></a>
+                <a href="https://wa.me/5511999999999" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <p>&copy; 2023 Mxchines Studio. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
+<script src="main.js"></script>
