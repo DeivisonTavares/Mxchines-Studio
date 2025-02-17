@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegance Shirts - Compra</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/compra-camisa.css">
+</head>
+<body>
+    <header>
+        <div class="logo">mxchines Studio</div>
+        <div class="header-buttons">
+            <button onclick="window.location.href='/'">Voltar</button>
+            <button onclick="window.location.href='/carrinho'"><i class="fas fa-shopping-cart"></i></button>
+        </div>
+    </header>
+    <main>
+        <div class="product-image">
+            <img src="../img/foto_nova2.png" alt="Camisa Elegante">
+        </div>
+        <div class="product-details">
+            <h1>Camisa Elegante Preta</h1>
+            <p class="price">R$ 129,99</p>
+            <div class="size-selector">
+                <h3>Tamanho:</h3>
+                <button onclick="selectSize(this)">P</button>
+                <button onclick="selectSize(this)">M</button>
+                <button onclick="selectSize(this)">G</button>
+                <button onclick="selectSize(this)">GG</button>
+            </div>
+            <div class="quantity-selector">
+                <h3>Quantidade:</h3>
+                <button onclick="decreaseQuantity()">-</button>
+                <span class="quantity-display">1</span>
+                <button onclick="increaseQuantity()">+</button>
+            </div>
+            <div class="shipping-calculator">
+                <h3>Calcular Frete:</h3>
+                <input type="text" id="cep" placeholder="Digite seu CEP" maxlength="8">
+                <button onclick="calculateShipping()">Calcular</button>
+            </div>
+            <div id="shipping-result"></div>
+            <div class="action-buttons">
+                <button class="add-to-cart" onclick="addToCart()">Adicionar ao Carrinho</button>
+                <button class="continue-shopping" onclick="continueShopping()">Continuar Comprando</button>
+            </div>
+        </div>
+        <div class="product-description">
+            <h2>Detalhes do Produto</h2>
+            <ul>
+                <li><strong>Material:</strong> 60% Algodão, 40% Poliéster</li>
+                <li><strong>Tipo de Tecido:</strong> Malha fina</li>
+                <li><strong>Estilo:</strong> Slim fit</li>
+                <li><strong>Gola:</strong> Redonda</li>
+                <li><strong>Manga:</strong> Curta</li>
+            </ul>
+            <h3>Instruções de Lavagem</h3>
+            <ul>
+                <li>Lavar à máquina em água fria (máximo 30°C)</li>
+                <li>Não usar alvejante</li>
+                <li>Secar na vertical à sombra</li>
+                <li>Passar a ferro em temperatura baixa</li>
+                <li>Não lavar a seco</li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <p>Entre em contato conosco:</p>
+        <a href="mailto:contato@mxchinesstudio.com"><i class="fas fa-envelope"></i> contato@mxchinesstudio.com</a>
+        <a href="https://wa.me/5511999999999"><i class="fab fa-whatsapp"></i> +55 (91) 99999-9999</a>
+        <a href="https://instagram.com/mxchinesstudio"><i class="fab fa-instagram"></i> @mxchinesstudio</a>
+    </footer>
+    <script src="/js/compra-camisa.js"></script>
+</body>
+</html>
