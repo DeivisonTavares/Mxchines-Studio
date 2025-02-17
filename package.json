@@ -1,0 +1,20 @@
+{
+  "name": "mxchines-studio",
+  "version": "1.0.0",
+  "description": "E-commerce da marca Mxchines Studio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeivisonTavares/Mxchines-Studio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DeivisonTavares/Mxchines-Studio/issues"
+  },
+  "homepage": "https://github.com/DeivisonTavares/Mxchines-Studio#readme"
+}
