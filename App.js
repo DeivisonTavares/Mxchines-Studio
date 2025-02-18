@@ -12,11 +12,11 @@ app.use(express.static('public'));
 let carrinho = [];
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'compra-camisa.html'));
+    res.sendFile(path.join(__dirname, 'public', 'views', 'Produto1OFC.html'));
 });
 
 app.get('/carrinho', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'carrinho.html'));
+    res.sendFile(path.join(__dirname, 'public', 'views', 'carrinhoOFC.html'));
 });
 
 app.post('/api/adicionar-ao-carrinho', (req, res) => {
