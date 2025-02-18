@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/DeivisonTavares/Mxchines-Studio/issues"
   },
-  "homepage": "https://github.com/DeivisonTavares/Mxchines-Studio#readme"
+  "homepage": "https://github.com/DeivisonTavares/Mxchines-Studio#readme",
+  "devDependencies": {
+    "@ljharb/tsconfig": "^0.2.3"
+  }
 }
