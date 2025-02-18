@@ -9,10 +9,10 @@
 </head>
 <body>
     <header>
-        <div class="logo">mxchines Studio</div>
+        <div class="logo" onclick="window.location.href='../views/index.html'">Mxchines Studio</div>
         <div class="header-buttons">
-            <button onclick="window.location.href='/'">Voltar</button>
-            <button onclick="window.location.href='/carrinho'"><i class="fas fa-shopping-cart"></i></button>
+            <button onclick="window.location.href='../views/index.html'">Voltar</button>
+            <button onclick="window.location.href='../views/carrinhoOFC.html'"><i class="fas fa-shopping-cart"></i></button>
         </div>
     </header>
     <main>
@@ -38,7 +38,7 @@
             <div class="shipping-calculator">
                 <h3>Calcular Frete:</h3>
                 <input type="text" id="cep" placeholder="Digite seu CEP" maxlength="8">
-                <button onclick="calculateShipping()">Calcular</button>
+                <button onclick="">Calcular</button>
             </div>
             <div id="shipping-result"></div>
             <div class="action-buttons">
@@ -71,6 +71,7 @@
         <a href="https://wa.me/5511999999999"><i class="fab fa-whatsapp"></i> +55 (91) 99999-9999</a>
         <a href="https://instagram.com/mxchinesstudio"><i class="fab fa-instagram"></i> @mxchinesstudio</a>
     </footer>
-    <script src="/js/compra-camisa.js"></script>
 </body>
 </html>
+<script src="../js/compra-camisa.js"></script>
+<script src="../js/main.js"></script>
