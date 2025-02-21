@@ -2,10 +2,10 @@
   "name": "mxchines-studio",
   "version": "1.0.0",
   "description": "E-commerce da marca Mxchines Studio",
-  "main": "app.js",
+  "main": "App.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node App.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
