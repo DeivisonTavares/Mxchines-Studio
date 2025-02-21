@@ -11,8 +11,12 @@ app.use(express.static('public'));
 // Simulação de um banco de dados
 let carrinho = [];
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'views', 'Produto1OFC.html'));
+app.get('/home', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'views', 'index.html'));
+});
+
+app.get('/produto', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'views', 'produto1OFC.html'));
 });
 
 app.get('/carrinho', (req, res) => {
@@ -23,6 +27,16 @@ app.post('/api/adicionar-ao-carrinho', (req, res) => {
     const { nome, tamanho, quantidade, preco } = req.body;
     carrinho.push({ nome, tamanho, quantidade, preco });
     res.json({ message: 'Produto adicionado ao carrinho', carrinho });
+});
+
+app.delete('/api/remover-do-carrinho/:index', (req, res) => {
+    const index = parseInt(req.params.index);
+    if (index >= 0 && index < carrinho.length) {
+        carrinho.splice(index, 1);
+        res.json({ success: true, message: 'Item removido do carrinho' });
+    } else {
+        res.status(400).json({ success: false, message: 'Índice inválido' });
+    }
 });
 
 app.get('/api/carrinho', (req, res) => {
