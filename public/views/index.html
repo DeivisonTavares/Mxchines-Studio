@@ -11,11 +11,11 @@
 <body>
     <header>
         <nav>
-            <div class="logo" onclick="IrHomepage()">Mxchines Studio</div>
+            <div class="logo" onclick="window.location.href='../views/index.html'">Mxchines Studio</div>
             <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#produtos">Produtos</a></li>
-                <li><a href="carrinhoOFC.html" class="carrinho-icon"><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a onclick="window.location.href='../views/index.html'" class="home-button">Início</a></li>
+                <li><a onclick="window.location.href='../views/Produto1OFC.html'" class="product-button">Produtos</a></li>
+                <li><a onclick="window.location.href='../views/carrinhoOFC.html'" class="carrinho-icon"><i class="fas fa-shopping-cart"></i></a></li>
             </ul>
         </nav>
     </header>
@@ -41,7 +41,7 @@
                     <img src="../img/MXCHINES FOTO 6.png" alt="Camisa 1">
                     <h3>Camisa Modelo 1</h3>
                     <p>R$ 99,90</p>
-                    <a href="produto1OFC.html" class="btn-comprar">Comprar</a>
+                    <button onclick="window.location.href='../views/Produto1OFC.html'" class="btn-comprar">Comprar</button>
                 </div>
                 <div class="produto">
                     <img src="camisa2.jpg" alt="Camisa 2">
