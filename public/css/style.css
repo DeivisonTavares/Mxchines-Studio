@@ -251,6 +251,7 @@
   .carrinho-icon {
     font-size: 1.2rem;
     color: var(--on-primary);
+    
   }
   
   /* Estilos para a página do produto */
@@ -362,4 +363,32 @@
     background-color: var(--secondary);
   }
   
-  
+  .home-button {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 0.5rem 1rem;
+    margin-left: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .home-button:hover {
+    background-color: #fff;
+    color: #000;
+  }
+
+  .product-button{
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 0.5rem 1rem;
+    margin-left: 0.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .product-button:hover {
+    background-color: #fff;
+    color: #000;
+  }
