@@ -8,7 +8,7 @@ function carregarCarrinho() {
             let cartHTML = '';
             let subtotal = 0;
 
-            carrinho.forEach(item => {
+            carrinho.forEach((item, index) => {
                 cartHTML += `
                     <div class="cart-item">
                         <img src="/img/camisa-placeholder.png" alt="${item.nome}">
@@ -18,6 +18,7 @@ function carregarCarrinho() {
                             <p>Quantidade: ${item.quantidade}</p>
                         </div>
                         <div class="item-price">R$ ${(item.preco * item.quantidade).toFixed(2)}</div>
+                        <button class="remove-item" onclick="removerItem(${index})">Remover</button>
                     </div>
                 `;
                 subtotal += item.preco * item.quantidade;
@@ -47,6 +48,25 @@ function carregarCarrinho() {
             console.error('Erro ao carregar o carrinho:', error);
             alert('Erro ao carregar o carrinho. Por favor, recarregue a página.');
         });
+}
+
+function removerItem(index) {
+    fetch(`/api/remover-do-carrinho/${index}`, {
+        method: 'DELETE',
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Item removido do carrinho');
+            carregarCarrinho(); // Recarrega o carrinho após a remoção
+        } else {
+            alert('Erro ao remover item do carrinho');
+        }
+    })
+    .catch(error => {
+        console.error('Erro ao remover item do carrinho:', error);
+        alert('Erro ao remover item do carrinho. Por favor, tente novamente.');
+    });
 }
 
 function finalizarCompra() {
