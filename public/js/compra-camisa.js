@@ -82,6 +82,10 @@ function addToCart() {
     });
 }
 
+function viewCart() {
+    window.location.href = '/carrinho';
+}
+
 function continueShopping() {
     window.location.href = '/';
 }
