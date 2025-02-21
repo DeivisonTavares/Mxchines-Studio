@@ -162,13 +162,13 @@ h1 {
     transition: all 0.3s ease;
 }
 
-.add-to-cart {
+.add-to-cart, .view-cart {
     background-color: #000;
     color: #fff;
     border: none;
 }
 
-.add-to-cart:hover {
+.add-to-cart:hover, .view-cart:hover {
     background-color: #333;
 }
 
@@ -232,7 +232,8 @@ footer a:hover {
     .product-image, .product-details {
         flex: 100%;
     }
+
+    .action-buttons {
+        flex-direction: column;
+    }
 }
-
-
-
