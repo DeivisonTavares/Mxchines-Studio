@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elegance Shirts - Compra</title>
+    <title>Mxchines Studio - Compra</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/compra-camisa.css">
+    <link rel="stylesheet" href="/css/compra-camisa.css">
 </head>
 <body>
     <header>
         <div class="logo" onclick="window.location.href='../views/index.html'">Mxchines Studio</div>
-        <div class="header-buttons">
-            <button onclick="window.location.href='../views/index.html'">Voltar</button>
+        <div class="header-buttons" >
+            <button onclick="window.location.href='../views/index.html'" >Voltar</button>
             <button onclick="window.location.href='../views/carrinhoOFC.html'"><i class="fas fa-shopping-cart"></i></button>
         </div>
     </header>
     <main>
         <div class="product-image">
-            <img src="../img/foto_nova2.png" alt="Camisa Elegante">
+            <img src="../img/foto_nova1.png" alt="Camisa Elegante">
         </div>
         <div class="product-details">
             <h1>Camisa Elegante Preta</h1>
@@ -38,11 +38,12 @@
             <div class="shipping-calculator">
                 <h3>Calcular Frete:</h3>
                 <input type="text" id="cep" placeholder="Digite seu CEP" maxlength="8">
-                <button onclick="">Calcular</button>
+                <button onclick="calculateShipping()">Calcular</button>
             </div>
             <div id="shipping-result"></div>
             <div class="action-buttons">
                 <button class="add-to-cart" onclick="addToCart()">Adicionar ao Carrinho</button>
+                <button class="view-cart" onclick="viewCart()">Ver Carrinho</button>
                 <button class="continue-shopping" onclick="continueShopping()">Continuar Comprando</button>
             </div>
         </div>
@@ -67,11 +68,10 @@
     </main>
     <footer>
         <p>Entre em contato conosco:</p>
-        <a href="mailto:contato@mxchinesstudio.com"><i class="fas fa-envelope"></i> contato@mxchinesstudio.com</a>
-        <a href="https://wa.me/5511999999999"><i class="fab fa-whatsapp"></i> +55 (91) 99999-9999</a>
-        <a href="https://instagram.com/mxchinesstudio"><i class="fab fa-instagram"></i> @mxchinesstudio</a>
+        <a href="mailto:contato@eleganceshirts.com"><i class="fas fa-envelope"></i> contato@eleganceshirts.com</a>
+        <a href="https://wa.me/5511999999999"><i class="fab fa-whatsapp"></i> +55 (11) 99999-9999</a>
+        <a href="https://www.instagram.com/eleganceshirts"><i class="fab fa-instagram"></i> @eleganceshirts</a>
     </footer>
 </body>
 </html>
-<script src="../js/compra-camisa.js"></script>
-<script src="../js/main.js"></script>
+<script src="/js/compra-camisa.js"></script>
